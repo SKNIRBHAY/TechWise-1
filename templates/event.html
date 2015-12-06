@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+{% block content %}
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+   
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>TechWise/Events</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+   
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/navbar-static-top.css' %}" rel="stylesheet">
+    <link href="jumbotron.css" rel="stylesheet">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Hackathons</h2>
+          <p align="justify">A hackathon (also known as a hack day, hackfest or codefest) is an event in which computer programmers and others involved in software development and hardware development, including graphic designers, interface designers and project managers, collaborate intensively on software projects. </p>
+          <p><a class="btn btn-primary" href="#" role="button">Find a Hackathon &raquo;</a></p>
+        </div>
+        
+        <div class="col-md-4">
+          <h2>Workshops</h2>
+          <p align="justify">Workshop is a meeting at which a group of people engage in intensive discussion and activity on a particular subject or project. A workshop is also an event in which participents are first tought about a programming language and then given hands on experience on the perticuler technology.  </p>
+          <p><a class="btn btn-primary" href="#" role="button">Find a Workshop &raquo;</a></p>
+       </div>
+       
+        <div class="col-md-4">
+          <h2>Conferences</h2>
+          <p align="justify">A conference is a meeting of people who "confer" about a topic. Academic conference, in science and academic, a formal event where researchers present results, workshops, and other activities i.e. Academic Conferences are formal events where researchers speaks about a topic of their result and present results of their research</p>
+          <p><a class="btn btn-primary" href="#" role="button">Find a Conference  &raquo;</a></p>
+        </div>
+      </div>  <!-- Row1 ends here-->
+
+      <hr>
+
+       <footer>
+        <h2>Upcomming Events:</h2>
+        <div class="row">
+        <div class="col-md-4">
+          <h4>AT&T Mobile App Hackathon (Smart City) - Bay Area</h4>
+          <p align="justify"><b>EVENT DETAIL:</b> Join us for a special Smart City Mobile App Hackathon, produced by the AT&T Developer Program. Smart City discussions are popping up everywhere! They mean the evolution of municipality decision making from reactionary, based on historic data, to proactive based on real-time data. </p> <p><b>Be ready for Prizes</b></P><ul> <li>Overview of IBM Bluemix Tools</li> <li>T&T Enhanced WebRTC Overview, Use Cases and Coding</li> </ul>
+          <p><a class="btn btn-primary" href="http://www.eventbrite.com/e/att-mobile-app-hackathon-smart-city-bay-area-tickets-5606447034?aff=ebrowse" role="button">Know more and register &raquo;</a></p>
+        </div>
+
+        <div class="col-md-4">
+          <h4>React.js+Node.js/Express.js/Meteor Workshop</h4>
+          <p align="justify"><b>EVENT DETAIL:</b> NodeProgram.com—one of the best JavaScript/Node.js education companies—is bringing this two-day in-person React.js+Node.js/Express/Meteor workshop held in San Francisco, CA. Over the span of two day, you get into the isomorphic/universal JavaScript development with React.JS, Node.JS, Express.js, MongoDB, Meteor. Come learn with the world-leading experts such as Azat Mardan (published 11 books and 4 online courses).</p>
+          <p><a class="btn btn-primary" href="http://www.eventbrite.com/e/reactjsnodejsexpressjsmeteor-workshop-tickets-19713314053?aff=es2" role="button">Know more and register &raquo;</a></p>
+        </div>
+
+       <div class="col-md-4">
+          <h4>Startup Grind's Global Conference</h4>
+          <p align="justify"><b>EVENT DETAIL:</b>Startup Grind’s Global Conference is bringing together 3k Founders, Investors, and Startup Enthusiasts for the most valuable tech event of 2016. Come to Silicon Valley and learn from over 100 of the world’s most successful entrepreneurs, build your skills at a dozen workshops, meet your next investor from the 150+ in attendance from top SV firms, and make more friends than you ever have in 2 days.</p>
+          <p><a class="btn btn-primary" href="https://www.startupgrind.com/conference/" role="button">Know more and register  &raquo;</a></p>
+        </div>
+      </div> <!--Row2 ends here -->
+      </footer> 
+    </div> <!-- /container -->
+    </font>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  {% endblock %}
+  </body>
+</html>

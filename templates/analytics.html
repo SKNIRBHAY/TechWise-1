@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Want to compare again? </h1>
+<form method="post" action="/homepage/">{% csrf_token %}
+    <input type="submit" value="Click here">
+</form>
+</body>
+{% endblock %}
+</html>

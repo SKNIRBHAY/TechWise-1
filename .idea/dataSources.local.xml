@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="PostgreSQL - test_db@localhost" uuid="9e08e7ef-76eb-478c-aec4-51ffed56f94d">
+      <secret-storage>master_key</secret-storage>
+      <user-name>sangit</user-name>
+      <schema-pattern>test_db.pg_catalog test_db.public</schema-pattern>
+      <default-schemas>test_db.public</default-schemas>
+    </data-source>
+    <data-source name="PostgreSQL - json_tweet@localhost" uuid="0243762d-4dcd-494e-a4b9-37928805c83c">
+      <secret-storage>master_key</secret-storage>
+      <user-name>sangit</user-name>
+      <schema-pattern>json_tweet.pg_catalog json_tweet.public</schema-pattern>
+      <default-schemas>json_tweet.public</default-schemas>
+    </data-source>
+  </component>
+</project>

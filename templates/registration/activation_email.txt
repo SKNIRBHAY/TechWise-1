@@ -1,0 +1,13 @@
+{% load i18n %}
+{% trans "Activate account at" %} {{ site.name }}:
+
+Hello there!
+
+Click the link below to activate your account.
+
+http://{{ techwise }}{% url 'registration_activate' activation_key %}
+http://127.0.0.1:8000/accounts/activate/a4521f8b839205f728fd3e41d8a9ababe035c4b7
+
+
+{% blocktrans %}The above link is valid for {{ expiration_days }} days.{% endblocktrans %}
+

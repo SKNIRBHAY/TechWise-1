@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+{% block content %}
+    <h1>Here are the upcoming seminars and workshops::</h1>
+<div id="result" style="color: #3a5363"></div>
+<script>
+    var getJSON = function(url) {
+  return new Promise(function(resolve, reject) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('get', url, true);
+    xhr.responseType = 'json';
+    xhr.onload = function() {
+      var status = xhr.status;
+      if (status == 200) {
+        resolve(xhr.response);
+      } else {
+        reject(status);
+      }
+    };
+    xhr.send();
+  });
+
+};
+
+ var jsonData=getJSON('https://access.alchemyapi.com/calls/data/GetNews?apikey=81eb5e006af783775d5b7850066824d767761704&return=enriched.url.title,enriched.url.url,enriched.url.enrichedTitle.docSentiment&q.enriched.url.cleanedTitle=javascript&q.enriched.url.enrichedTitle.taxonomy.taxonomy_.label=technology%20and%20computing&count=25&outputMode=json&start=now-12h&end=now&q.enriched.url.docSentiment.type=positive&q.enriched.url.docSentiment.score=%3E=0.5').then(function(data)
+ {
+    for(var i=0; i<data.result.docs.length; i++)
+     {
+        var sjd ;
+        sjd += "<br/>" + '<a href="' + data.result.docs[i].source.enriched.url.url + '">' + data.result.docs[i].source.enriched.url.title + '</a>'
+               + " : sentiment = " + data.result.docs[i].source.enriched.url.enrichedTitle.docSentiment.type + '<br>';
+
+         document.getElementById("result").innerHTML = sjd ;
+     }
+
+{#     for(var j=0; j<data.result.docs.length;j++){#}
+{#         var sjd1;#}
+{#          sjd1 +="<br/>" + data.result.docs[j].source.enriched.url.enrichedTitle.docSentiment.type + "<br>";#}
+{#         document.getElementById("result").innerHTML = sjd1;#}
+{#         result.innerHTML += data.result.docs.source.enriched.url.enrichedTitle.docSentiment.score;#}
+{#        for(var i=0; i<data.result.docs.length; i++)#}
+{# {#}
+{#     result.innerText += data.result.docs[i].source.enriched.url.enrichedTitle.docSentiment.type;#}
+{# }#}
+
+ }, function(status) { //error detection....
+  alert('Something went wrong.');
+});
+</script>
+{% endblock %}
+</body>
+</html>
