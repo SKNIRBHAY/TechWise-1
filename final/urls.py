@@ -25,7 +25,6 @@ urlpatterns = [
     url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'^watson/$', 'newsletter.views.watson',name='watson'),
     url(r'^event/$','newsletter.views.event',name='event'),
-    url(r'^analytics/$', 'newsletter.analytics.main'),
     url(r'^watson_main/$', 'newsletter.views.watson_main',name='watson_main'),
     url(r'^analytics/$', 'newsletter.analytics.main', name='analytics'),
     url(r'^homepage/$', 'newsletter.views.homepage', name='homepage'),

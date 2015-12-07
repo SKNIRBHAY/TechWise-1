@@ -1,12 +1,9 @@
-
 {% extends 'base.html' %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 </head>
 <body>
-
 
 {% block content %}
     <h1>The content of your url is the following::</h1>
@@ -34,7 +31,7 @@ getJSON('http://gateway-a.watsonplatform.net/calls/url/URLGetText?apikey=ae62c6c
 
     result.innerText = data.text; //display the result in an HTML element
 }, function(status) { //error detection....
-  alert('Something went wrong.');
+  alert('Something went wrong. Please try again');
 });
 </script>
 {% endblock %}
