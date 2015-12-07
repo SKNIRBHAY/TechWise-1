@@ -28,8 +28,28 @@ urlpatterns = [
     url(r'^watson_main/$', 'newsletter.views.watson_main',name='watson_main'),
     url(r'^analytics/$', 'newsletter.analytics.main', name='analytics'),
     url(r'^homepage/$', 'newsletter.views.homepage', name='homepage'),
+    url(r'^reference/$', 'newsletter.views.reference', name='reference'),
     url(r'^stats/$', 'newsletter.views.stats', name='stats'),
+    url(r'^rawHtmlText/$', 'newsletter.views.rawHtmlText', name='rawHtmlText'),
     #url(r'^newsletter/', include('final.urls'))
+
+    #Language Pages
+    url(r'^reference/html/$', 'newsletter.views.html', name='html'),
+    url(r'^reference/css/$', 'newsletter.views.css', name='css'),
+    url(r'^reference/js/$', 'newsletter.views.js', name='js'),
+    url(r'^reference/bootstrap/$', 'newsletter.views.bootstrap', name='bootstrap'),
+    url(r'^reference/perl/$', 'newsletter.views.perl', name='perl'),
+    url(r'^reference/php/$', 'newsletter.views.php', name='php'),
+    url(r'^reference/nodejs/$', 'newsletter.views.nodejs', name='nodejs'),
+    url(r'^reference/python/$', 'newsletter.views.python', name='python'),
+    url(r'^reference/django/$', 'newsletter.views.django', name='django'),
+    url(r'^reference/ruby/$', 'newsletter.views.ruby', name='ruby'),
+    url(r'^reference/db2/$', 'newsletter.views.db2', name='db2'),
+    url(r'^reference/mangodb/$', 'newsletter.views.mangodb', name='mangodb'),
+    url(r'^reference/postgresql/$', 'newsletter.views.postgresql', name='postgresql'),
+    url(r'^reference/mysql/$', 'newsletter.views.mysql', name='mysql'),
+    url(r'^reference/sqlite/$', 'newsletter.views.sqlite', name='sqlite'),
+    url(r'^reference/hadoop/$', 'newsletter.views.hadoop', name='hadoop')
 ]
 
 if settings.DEBUG:

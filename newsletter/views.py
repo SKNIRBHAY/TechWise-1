@@ -70,3 +70,59 @@ def event(request):
 
 def stats(request):
     return render(request, 'stats.html')
+
+def rawHtmlText(request):
+    return render(request, 'rawHtmlText.html')
+
+def reference(request):
+	return render(request, "reference.html", {})
+
+
+# View functions for programming languages
+def html(request):
+    return render(request, "HTML.html", {})
+
+def css(request):
+    return render(request, "css.html", {})
+
+def js(request):
+    return render(request, "js.html", {})
+
+def bootstrap(request):
+    return render(request, "bootstrap.html", {})
+
+def perl(request):
+    return render(request, "perl.html", {})
+
+def php(request):
+    return render(request, "php.html", {})
+
+def nodejs(request):
+    return render(request, "nodejs.html", {})
+
+def python(request):
+    return render(request, "python.html", {})
+
+def django(request):
+    return render(request, "django.html", {})
+
+def ruby(request):
+    return render(request, "ruby.html", {})
+
+def db2(request):
+    return render(request, "db2.html", {})
+
+def mangodb(request):
+    return render(request, "mangodb.html", {})
+
+def postgresql(request):
+    return render(request, "postgresql.html", {})
+
+def mysql(request):
+    return render(request, "mysql.html", {})
+
+def sqlite(request):
+    return render(request, "sqlite.html", {})
+
+def hadoop(request):
+    return render(request, "hadoop.html", {})

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
@@ -7,6 +8,10 @@
     <title>Title</title>
 </head>
 <body>
+
+
+  <img src="{% static "trending.png" %}" width="600" height="400">
+
 <h1>Want to compare again? </h1>
 <form method="post" action="/homepage/">{% csrf_token %}
     <input type="submit" value="Click here">
