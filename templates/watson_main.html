@@ -2,12 +2,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <style>span.stars, span.stars>* {
+    display: inline-block;
+    background: url(http://i.imgur.com/YsyS5y8.png) 0 -16px repeat-x;
+    width: 80px;
+    height: 16px;
+}
+span.stars>*{
+    max-width:80px;
+    background-position: 0 0;
+    }
+    </style>
 </head>
 <body>
 {% block content %}
     <h1>Here are the upcoming seminars and workshops::</h1>
 
 <div id="result" style="color: #09238b"></div>
+    <script>
+    $.fn.stars = function() {
+    return this.each(function(i,e){$(e).html($('<span/>').width($(e).text()*16));});
+    };
+    $('.stars').stars();</script>
 <script>
     var getJSON = function(url) {
   return new Promise(function(resolve, reject) {
@@ -27,21 +44,36 @@
 
 };
 
- var jsonData=getJSON('https://access.alchemyapi.com/calls/data/GetNews?apikey=ae62c6cb3bf5b78f03e36b38d0fcf4115ca11032&return=enriched.url.title,enriched.url.url,enriched.url.enrichedTitle.docSentiment&q.enriched.url.cleanedTitle=python&q.enriched.url.enrichedTitle.taxonomy.taxonomy_.label=technology%20and%20computing&count=25&outputMode=json&start=now-12h&end=now&q.enriched.url.docSentiment.type=positive&q.enriched.url.docSentiment.score=%3E=0.5').then(function(data)
+ var jsonData=getJSON('https://access.alchemyapi.com/calls/data/GetNews?apikey=39ebff83bd159d37651f585621bf9a998a512189&return=enriched.url.title,enriched.url.url,enriched.url.enrichedTitle.docSentiment&q.enriched.url.cleanedTitle=python&q.enriched.url.enrichedTitle.taxonomy.taxonomy_.label=technology%20and%20computing&count=25&outputMode=json&start=now-12h&end=now&q.enriched.url.docSentiment.type=positive&q.enriched.url.docSentiment.score=%3E=0.5').then(function(data)
  {
     for(var i=0; i<data.result.docs.length; i++)
      {
          var url = data.result.docs[i].source.enriched.url.url;
-         var mainURL = 'http://gateway-a.watsonplatform.net/calls/url/URLGetText?apikey=ae62c6cb3bf5b78f03e36b38d0fcf4115ca11032&&outputMode=json&url=' + url;
-        var sjd ;
-        sjd += "<br/>" + data.result.docs[i].source.enriched.url.title +  " : sentiment is " + data.result.docs[i].source.enriched.url.enrichedTitle.docSentiment.type +
-                " and sentiment score is : " + data.result.docs[i].source.enriched.url.enrichedTitle.docSentiment.score +'<a href="/rawHtmlText/">' + ' Read more' + '</a>' + '<br>';
+        var sjd;
+
+        sjd += "<br/>" + data.result.docs[i].source.enriched.url.title +
+{#                '<a href="/rawHtmlText/">' + ' Read more' + '</a>' + '<br>';#}
+         '<form action="/rawHtmlText/" method="COMPARE">'+'<input type="submit" value="Read More">'+
+                        '</form>'+'<br>';
+
+
+         if(data.result.docs[i].source.enriched.url.enrichedTitle.docSentiment.score > 0){
+             sjd += "Rating: " + '<span class="stars">5</span>';
+         }
+         else if(data.result.docs[i].source.enriched.url.enrichedTitle.docSentiment.score == 0 ){
+             sjd+="Rating: " + '<span class="stars">3</span>';
+         }
+         else {
+             sjd +="Rating: " + '<span class="stars">1</span>';
+         }
 
          document.getElementById("result").innerHTML = sjd ;
+
      }
 
+ }
+ );
 
- });
 </script>
 {% endblock %}
 </body>
