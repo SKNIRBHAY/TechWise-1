@@ -44,17 +44,16 @@ span.stars>*{
 
 };
 
- var jsonData=getJSON('https://access.alchemyapi.com/calls/data/GetNews?apikey=39ebff83bd159d37651f585621bf9a998a512189&return=enriched.url.title,enriched.url.url,enriched.url.enrichedTitle.docSentiment&q.enriched.url.cleanedTitle=python&q.enriched.url.enrichedTitle.taxonomy.taxonomy_.label=technology%20and%20computing&count=25&outputMode=json&start=now-12h&end=now&q.enriched.url.docSentiment.type=positive&q.enriched.url.docSentiment.score=%3E=0.5').then(function(data)
+ var jsonData=getJSON('https://access.alchemyapi.com/calls/data/GetNews?apikey=a9bb170f79b82e788cb6e4aaaad23eb7fc3ab825&return=enriched.url.title,enriched.url.url,enriched.url.enrichedTitle.docSentiment&q.enriched.url.cleanedTitle=python&q.enriched.url.enrichedTitle.taxonomy.taxonomy_.label=technology%20and%20computing&count=25&outputMode=json&start=now-12h&end=now').then(function(data)
  {
+     var sjd="";
     for(var i=0; i<data.result.docs.length; i++)
      {
-         var url = data.result.docs[i].source.enriched.url.url;
-        var sjd;
+
+          var url = data.result.docs[i].source.enriched.url.url
 
         sjd += "<br/>" + data.result.docs[i].source.enriched.url.title +
-{#                '<a href="/rawHtmlText/">' + ' Read more' + '</a>' + '<br>';#}
-         '<form action="/rawHtmlText/" method="COMPARE">'+'<input type="submit" value="Read More">'+
-                        '</form>'+'<br>';
+                '<a href="/rawHtmlText/?redirect='+url+'">' + ' Read more' + '</a>' + '<br>';
 
 
          if(data.result.docs[i].source.enriched.url.enrichedTitle.docSentiment.score > 0){
@@ -67,9 +66,10 @@ span.stars>*{
              sjd +="Rating: " + '<span class="stars">1</span>';
          }
 
-         document.getElementById("result").innerHTML = sjd ;
+
 
      }
+     document.getElementById("result").innerHTML = sjd ;
 
  }
  );

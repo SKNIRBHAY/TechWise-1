@@ -115,17 +115,37 @@ document.getElementById("cloud").src="PYPL/"+cloud;
 
 <body>
 
+<div class="center">
+    <img src="{% static "trending.png" %}" width="600" height="400">
+    <h3>This is the comparison for current trending languages for last 24 hours.<br/> But what about the overall comparison?</h3>
+    <br/><br/>
+    <h4>If you want to compare again, then <br/> </h4>
+    </div>
+<div class='col-sm-2 col-sm-offset-5 text-align-center'>
+
+    <form method="post" action="/homepage/">{% csrf_token %}
+    <input class="btn btn-block btn-primary" type="submit" value="Click here">
+</form>
+</div>
+<br/><br/><br/><br/>
+<div class="center">
+    <h3>If you want to see events taking place in near future, then  </h3>
+</div>
+<div class='col-sm-2 col-sm-offset-5 text-align-center'>
+
+    <form method="post" action="/event/">{% csrf_token %}
+    <input class="btn btn-block btn-primary" type="submit" value="Click here">
+</form>
+</div>
+<br/><br/><br/><br/>
+<br/><br/>
 <div class="container-fluid page">
   <div class="row blue">
         <h1 class="text-center">Popularity of Programming Languages</h1>
 
-         <!--<p class=text-center><a href="?">Worldwide</a> <a href="?country=US">US</a></p>-->
-
-         <!-- <div class="visible-xs">xs</div><div class="visible-sm">sm</div><div class="visible-md">md</div><div class="visible-lg">lg</div>-->
-
         <div class="col-sm-5 col-md-5 col-lg-4 col-lg-offset-1 vcenter">
           <span>
-            <p class=lead>This index is created by analyzing how often a programming language and its tutorials are mentioned on twitter </p>
+            <p class=lead>This index is created by analyzing how often a programming language and its tutorials are mentioned on websites and blogs<br/><br/>This table represents the trend for a particular month of november 2015<br/> Source: <bold>PYPL</bold> </p>
             <p><br></p>
 
           </span>
@@ -145,152 +165,32 @@ document.getElementById("cloud").src="PYPL/"+cloud;
     background: linear-gradient(top, white 0%,white 50%,#ffffff 50%,#ffffff 100%); /* W3C */
     ">
     <br><br>
-
-    <!-- border -->
-
     <br><br>
 
   </div>
 <div class="center">
-    <h1 class="text-center">Hey, you did got to know the current trends but what about the overall postions of languages?</h1>
+    <h1 class="text-center">You got to know the current trends but what about the overall postions of languages?</h1>
     <br><br>
         <h4 class="text-center">Here is a graph which shows that.</h4>
     <br><br>
         <img style="text-align: center" src="{% static 'img/img.jpg' %}">
     </div>
-    <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 vcenter">
-        <h1>FAQ</h1>
-        <div class="panel-group" id="accordion">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseZero">What is the PYPL index ?</a>
-                </h4>
-            </div>
-            <div id="collapseZero" class="panel-collapse collapse in">
-                <div class="panel-body">
-                    <p>The PYPL PopularitY of Programming Language Index  is created by analyzing how often language tutorials are searched on Google : the more a language tutorial is searched, the more popular the language is assumed to be. It is a leading indicator.  The raw data comes from Google Trends.</p>
-                    <p>If you believe in collective wisdom, the PYPL Popularity of Programming Language index can help you decide which language to study, or which one to use in a new software project.  </p>
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Why is PYPL so different from TIOBE ?</a>
-                </h4>
-            </div>
-            <div id="collapseOne" class="panel-collapse collapse">
-                <div class="panel-body">
-                    The  <a href="http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html">TIOBE Index</a> is a lagging indicator.
-                    It counts the number of web pages with the language name.
-                    <mark>Objective-c programming</mark> has over 20 million pages on the web,
-                    <sup><a href="https://www.google.be/#hl=fr&amp;tbo=d&amp;output=search&amp;sclient=psy-ab&amp;q=%22objective-c+programming%22&amp;oq=%22objective-c+programming%22&amp;gs_l=hp.3..0l2j0i30l2.3028.3028.0.3908.1.1.0.0.0.0.131.131.0j1.1.0...0.0...1c.1.L2X9Y0uJ0Uk&amp;pbx=1&amp;bav=on.2,or.r_gc.r_pw.r_qf.&amp;bvm=bv.1354675689,d.d2k&amp;fp=c6fa6e161d5c7c9b&amp;bpcl=39650382&amp;biw=1814&amp;bih=1010">[s]</a></sup>
-                      while <mark>C programming</mark> has only 11 million.
-                      <sup><a href="https://www.google.be/#hl=fr&amp;tbo=d&amp;sclient=psy-ab&amp;q=%22c+programming%22&amp;oq=%22c+programming%22&amp;gs_l=hp.3..0l4.105171.105171.1.106210.1.1.0.0.0.0.217.217.2-1.1.0...0.0...1c.1.i0F5z0y2deM&amp;pbx=1&amp;bav=on.2,or.r_gc.r_pw.r_qf.&amp;bvm=bv.1354675689,d.d2k&amp;fp=c6fa6e161d5c7c9b&amp;bpcl=39650382&amp;biw=1814&amp;bih=1010">[s]</a> </sup>
-                      This explains why Objective-C has a high TIOBE ranking.  But who is reading those Objective-C web pages ? Hardly anyone, according to Google Trends data.
-                      <mark>Objective C programming</mark> is searched 30 times less than <mark>C programming</mark>.
-                      <sup><a href="http://www.google.be/trends/explore#q=C%20programming%2C%20objective%20c%20programming&amp;date=today%2012-m&amp;cmpt=q">[s]</a></sup>
-                      In fact, the use of <mark>programming</mark> by the TIOBE index is misleading (see next question).
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Why do you use tutorial as Google Trends keyword ?</a>
-                </h4>
-            </div>
-            <div id="collapseTwo" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <p>The following principles were used:</p>
-                    <ul>
-                    <ul><li>just the language name, e.g. <mark>Python</mark>, would lead to inconsistent results, because Python has many other meanings;</li>
-                    <li>the same phrase should be used for all languages, for consistency.</li>
-                    <li><mark>programming</mark> would not do : <mark>C programming</mark> is used much more than <mark>PHP programming</mark>, because PHP does not need the qualifier</li>
-                    <li><mark>tutorial</mark> is a word used frequently by developers learning any new language : it makes a good leading indicator. What is a <mark>python tutorial</mark>, if not a tutorial on the programming language ?</li>
-                    <li><mark>ios tutorial</mark> is used instead of the (<a href="http://www.google.com/trends/explore?hl=en-US#q=ios%20tutorial%2C%20objective%20c%20tutorial&amp;cmpt=q">less popular</a>) <mark>objective-c tutorial</mark> to better reflect what iPhone developers search.  This is confirmed by an analysis of language tag followers on <a href="http://stackoverflow.com/tags">StackOverflow</a>, or of the visits of the Wikipedia language pages <a href="http://stats.grok.se/en/latest90/objective-c"><sup>[s]</sup></a> : they give a 4-5% popularity to Objective-C, which is highly consistent with our estimate.  It may flatter objective-c's market share because it includes queries of iOS end users.</li></ul>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">My favorite language is not in the index ! Why ?</a>
-                </h4>
-            </div>
-            <div id="collapseThree" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <p> The index is currently limited to 15 languages.  You can still analyze the popularity of your favorite language and compare it to others, using <a href="http://www.google.com/trends/explore">Google Trends</a>.</p>
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">How do you compute the share of web searches ?</a>
-                </h4>
-            </div>
-            <div id="collapseFour" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <div>We export the data from Google Trends in CSV format,
-                    <sup><a href="http://support.google.com/trends/bin/answer.py?hl=en&amp;answer=87289">[s]</a></sup>
-                    and analyze it with <a href=https://sites.google.com/site/pydatalog/home>pyDatalog</a>.
-                    We first calculate the interest of each language tutorials relative to java tutorials every month.
-                    Normalizing the total to 100% yields the share of interest in each language, i.e. their popularity, which we smooth over 6 months.
-                    Linear regression over the last 12 months gives the yearly trends.
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">Why is Java so flat in PYPL's diagram, while it is going down in Google Trends over 5 years ?</a>
-                </h4>
-            </div>
-            <div id="collapseFive" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <div>That's because Google Trends diagrams show how the <b>total number</b> of Java tutorial  searches varies over time.  That has been going significantly down for most programming languages (and most keywords, by the way).  Instead, PYPL's diagram shows the <b>share </b>of <mark>Java tutorial</mark> searches in all language tutorial searches.  That share has been fairly stable for Java since 2004.</div>
 
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">Can I copy material from this page ?</a>
-                </h4>
-            </div>
-            <div id="collapseSix" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <p>This work is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/" rel="license">Creative Commons Attribution 3.0 Unported License</a>.</p>
-                </div>
-            </div>
-        </div>
-        </div>
-    </div>
-    <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 text-right">
-        <p><br><br><br><br>.</p>
-    </div>
-  </div>
+      </div>
 </div>
 
 
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
-
 <script type="text/javascript" src="js/bootstrap-select.js"></script>
-
-<!-- Google -->
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-
+<br/><br/><br/><br/>
+<div class="center">
+    <h2 class="text-center">We'll quickly walk you through some interesting analytics which will help you in deciding what to pursue</h2>
+    <br><br>
+    <br><br>
+        <img style="text-align: center" src="{% static 'img/ana.png' %}">
+    </div>
 
   </body>
 {% endblock %}

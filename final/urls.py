@@ -1,18 +1,4 @@
-"""final URL Configuration
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/1.8/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
-Including another URLconf
-    1. Add an import:  from blog import urls as blog_urls
-    2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
-"""
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf.urls.static import static
@@ -23,7 +9,7 @@ urlpatterns = [
     url(r'^about/$', 'final.views.about', name='about'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('registration.backends.default.urls')),
-    url(r'^watson/$', 'newsletter.views.watson',name='watson'),
+    url(r'^hackathonEvents/$', 'newsletter.views.hackathonEvents',name='hackathonEvents'),
     url(r'^event/$','newsletter.views.event',name='event'),
     url(r'^watson_main/$', 'newsletter.views.watson_main',name='watson_main'),
     url(r'^analytics/$', 'newsletter.analytics.main', name='analytics'),
@@ -31,6 +17,9 @@ urlpatterns = [
     url(r'^reference/$', 'newsletter.views.reference', name='reference'),
     url(r'^stats/$', 'newsletter.views.stats', name='stats'),
     url(r'^rawHtmlText/$', 'newsletter.views.rawHtmlText', name='rawHtmlText'),
+    url(r'^hStatic/$', 'newsletter.views.hStatic', name='hStatic'),
+    url(r'^hStatic1/$', 'newsletter.views.hStatic1', name='hStatic1'),
+    url(r'^workshops/$', 'newsletter.views.workshops', name='workshops'),
     #url(r'^newsletter/', include('final.urls'))
 
     #Language Pages

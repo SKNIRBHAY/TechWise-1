@@ -8,10 +8,11 @@ from django.http import HttpResponse, HttpResponseRedirect
 
 def index(request):
     title = 'Sign Up'
-    title = "Home Page of %s" %(request.user)
+    username = "Home Page of %s" %(request.user)
     form = SignUpUser(request.POST or None)
     context = {
         'title': title,
+        'username': username,
         'form': form
     }
     if form.is_valid():
@@ -19,7 +20,7 @@ def index(request):
         context = {
             'title':"Thank you"
         }
-    return render(request, "index.html", context)
+    return render(request,'index.html', context)
 
 def contact(request):
     title = 'Hello, please leave us a message'
@@ -44,11 +45,7 @@ def contact(request):
     return render(request, 'contactform.html', context)
 
 
-def watson(request):
-    title = 'hello man'
-    context = {
-        'title':title
-    }
+
 
     return render(request,'watson.html', context)
 
@@ -60,19 +57,23 @@ def watson_main(request):
     return render(request,'watson_main.html', context)
 
 def homepage(request):
-    if not request.user.is_authenticated():
-        return login(request)
-    else:
       return render(request, 'homepage.html')
 
 def event(request):
-    return render(request,'event.html')
+    if not request.user.is_authenticated():
+         return login(request)
+    else:
+        return render(request,'event.html')
 
 def stats(request):
     return render(request, 'stats.html')
 
 def rawHtmlText(request):
-    return render(request, 'rawHtmlText.html')
+   url = request.GET.get('redirect', 'sjd1')
+   context = {
+        'url' : url
+    }
+   return render(request, 'rawHtmlText.html', context)
 
 def reference(request):
 	return render(request, "reference.html", {})
@@ -126,3 +127,16 @@ def sqlite(request):
 
 def hadoop(request):
     return render(request, "hadoop.html", {})
+
+
+def hackathonEvents(request):
+    return render(request, "hackathonEvents.html")
+
+def hStatic(request):
+    return render(request, "hStatic.html")
+
+def hStatic1(request):
+    return render(request, "hStatic1.html")
+
+def workshops(request):
+    return render(request, "workshops.html")

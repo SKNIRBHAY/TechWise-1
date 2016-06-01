@@ -1,0 +1,18 @@
+pytz
+numpy=1.10.4
+openpyxl
+xlsxwriter
+xlrd
+xlwt
+numexpr
+pytables
+html5lib
+lxml
+matplotlib
+jinja2
+bottleneck
+xarray
+boto
+
+# incompat with conda ATM
+# beautiful-soup

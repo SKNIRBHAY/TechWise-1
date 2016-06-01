@@ -9,7 +9,7 @@
 <body>
 {% block content %}
 <h1>This is raw data by watson</h1>
-<div id="result" style="color: #3a5363"></div>
+<div id="result"></div>
  <script>
     var getJSON = function(url) {
   return new Promise(function(resolve, reject) {
@@ -28,8 +28,15 @@
   });
 };
 
-getJSON('http://gateway-a.watsonplatform.net/calls/url/URLGetText?apikey=ae62c6cb3bf5b78f03e36b38d0fcf4115ca11032&&outputMode=json&url=http://www.cnn.com/2009/CRIME/01/13/missing.pilot/index.html').then(function(data) {
-        result.innerText = data.text;
+{#    var man = 'http://gateway-a.watsonplatform.net/calls/url/URLGetText?apikey=a9bb170f79b82e788cb6e4aaaad23eb7fc3ab825&&outputMode=json&url='+'{{ url }}';#}
+{##}
+{#    console.log(man);#}
+getJSON('http://gateway-a.watsonplatform.net/calls/url/URLGetText?apikey=2eacf3853be9d07a11e3bb71d791d34e84a5cd19&&outputMode=json&url='+'{{ url }}').then(function(data) {
+
+    var sjd = '<p>' + data.text + '</p>';
+    document.getElementById("result").innerHTML = sjd ;
+{#        result.innerText = data.text;#}
+
 });
 </script>
 

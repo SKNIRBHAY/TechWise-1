@@ -16,6 +16,7 @@
 
 <style>
     {% block style %}
+
     {% endblock %}
 </style>
 {% block content %}
@@ -23,16 +24,19 @@
   <link href="{% static 'css/homepage.css' %}" rel="stylesheet" type="text/css"/>
   <script src="{% static 'js/jquery.min.js' %}"></script>
   <script src="{% static 'js/image_slide.js' %}"></script>
-  <div id="main">
+{#  <div id="main">#}
     <div id="site_content">
-     <div class="slideshow">
-        <ul class="slideshow">
-          <li class="show"><img width="900" height="250" border="10" src="http://fademsoft.com/wp-content/themes/fdtema/img/slide/slide2.png"/></li>
-          <!--<li class="show"><img width="900" height="250" border="10" src="http://edge.alluremedia.com.au/m/l/2015/07/1350289244899804964.jpg"/></li>-->
-          <li><img width="900" height="250" border="10" src="http://fademsoft.com/wp-content/themes/fdtema/img/slide/slide2.png"/></li>
-        </ul>
-      </div><!--close slideshow-->
+
       <div class="blockgroup">
+          <div id="content">
+        <div class="content_item">
+		  <h1>Welcome to TechWise</h1>
+          <p>
+            Steve jobs once said that <b>'Everybody in the country should learn how to program a computer since it teaches you how to think'</b>. Whether it is high paid tech jobs or flexible work schedules or other perks, people are increasingly learning to code. There are many options available online to learn coding. This leads us to the question of which programming language to choose. Choosing a programming language can be confusing sometimes. We provide you a good statistical analysis of programming languages available. You can also know about various Hackathons,workshops and conferences assosiated with a particular technology based on your interest.
+          </p>
+
+	</div>
+      </div>
 	  <div class="frontend">
 	    <h3>Front End Design</h3>
 		<p>Know about different frameworks for front end web developement, also get to know about most powerful amd popular frameworks available today which makes the 680 million webpages possible!! </p>
@@ -79,10 +83,10 @@
                     <input type="submit" class="btn-style" color="black" value="Compare">
 		  </form>
                 </div>
-	  </div><!--close backend-->
+	  </div><!--close backend-->	  
 	  <div class="databases">
 	    <h3>DataBases</h3>
-		<p>Know about different DataBases as it is central to modern applications and choosing the right Database technology is very much essential in successful deployement of IT projects. </p>
+		<p>Know about different DataBases as it is central to modern applications and choosing the right Database technology is very much essential in successful deployement of IT projects. </p>	  
                 <div class="hovertext">
 		  <form action="/analytics/" method="COMPARE">
                   <input type="checkbox" name="db2" value="db2">
@@ -104,21 +108,20 @@
                     <input type="submit" class="btn-style" color="black" value="Compare">
 		  </form>
                 </div>
-	  </div><!--close databases-->
-      </div><!--close blockgroup-->
-      <div id="content">
-        <div class="content_item">
-		  <h1>Welcome to TechWise</h1>
-          <p>
-            Steve jobs once said that <b>'Everybody in the country should learn how to program a computer since it teaches you how to think'</b>. Whether it is high paid tech jobs or flexible work schedules or other perks, people are increasingly learning to code. There are many options available online to learn coding. This leads us to the question of which programming language to choose. Choosing a programming language can be confusing sometimes. We provide you a good statistical analysis of programming languages available. You can also know about various Hackathons,workshops and conferences assosiated with a particular technology based on your interest.
-          </p>
-<!--         <p> This is the Website which gives the user a good analysis of what programming language to choose for their application from the abundant number of choices available today.The website also gives the statistical analysis view on the real time scenario related to any technology with its comparision to other related technologies.You can also know about various Hackathons,workshops and conferences assosiated with a particular technology based on your interest.
-</p>-->
-	</div><!--close content_item-->
-      </div><!--close content-->
-	  <br style="clear:both"/>
-    </div><!--close site_content-->
-  </div><!--close main-->
+	  </div>
+           <div class="slideshow">
+        <ul class="slideshow">
+          <li class="show"><img width="900" height="250" border="10" src="http://fademsoft.com/wp-content/themes/fdtema/img/slide/slide2.png"/></li>
+          <!--<li class="show"><img width="900" height="250" border="10" src="http://edge.alluremedia.com.au/m/l/2015/07/1350289244899804964.jpg"/></li>-->
+          <li><img width="900" height="250" border="10" src="http://fademsoft.com/wp-content/themes/fdtema/img/slide/slide2.png"/></li>
+        </ul>
+      </div><!--close slideshow-->
+      </div>
+
+
+{#	  <br style="clear:both"/>#}
+    </div>
+{#  </div>#}
 {% endblock %}
 </body>
 </html>

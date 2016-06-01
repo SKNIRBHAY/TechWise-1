@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Raw text data</title>
+</head>
+<body>
+{% block content %}
+<h1>This is raw data by watson</h1>
+<div id="result" style="color: #3a5363"></div>
+ <script>
+    var getJSON = function(url) {
+  return new Promise(function(resolve, reject) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('get', url, true);
+    xhr.responseType = 'json';
+    xhr.onload = function() {
+      var status = xhr.status;
+      if (status == 200) {
+        resolve(xhr.response);
+      } else {
+        reject(status);
+      }
+    };
+    xhr.send();
+  });
+};
+
+getJSON('http://gateway-a.watsonplatform.net/calls/url/URLGetText?apikey=9a6553d4beed4e463158ea26cec901b850418a57&&outputMode=json&url=http://www.meetup.com/Hackathons/events/225519237/').then(function(data) {
+        var sjd = '<p>' + data.text + '</p>';
+    document.getElementById("result").innerHTML = sjd ;
+
+});
+</script>
+
+{% endblock %}
+</body>
+</html>

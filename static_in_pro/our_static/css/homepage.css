@@ -32,9 +32,16 @@ h1, h2, h3, h4, h5, h6
   margin: 0 0 10px 0;}
 
 h3
-{ font: bold 130% inherit;
-  color: #FFF;
-  text-shadow: 1px 1px #000;}
+{ font: 110% inherit;
+  color: black;
+  min-height:44px;
+  text-align: center;
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  background-color: white;
+  border-radius: 10px;
+}
 
 h4, h5, h6
 { margin: 0;
@@ -50,7 +57,10 @@ a, a:hover
   text-decoration: none;}
 
 a:hover
-{ text-decoration: underline;}
+{
+  text-decoration: underline;
+  font-size: 125%;
+}
 
 ul
 { margin: 2px 0 22px 30px;
@@ -102,6 +112,7 @@ ol li
   margin-top: 30px;
   margin-bottom: 30px;
   width: 900px;
+  color: grey;
 }
 
 .blockgroup{
@@ -110,29 +121,16 @@ ol li
   color: white;
 }
 
-.frontend
+.frontend,
+.backend,
+.databases
 { width: 243px;
   margin-left : 26px;
   float: left;
   padding: 20px;
-  background: #635688;
+  background: #2673a6;
+  /*background: #337ab7;*/
 }
-
-.backend
-{ width: 243px;
-  margin-left: 26px;  
-  float: left;
-  padding: 20px;
-  background: #635688;
-}  
-  
-.databases
-{ width: 243px;
-  margin-left: 26px;
-  float: left;
-  padding: 20px;
-  background: #635688;
-} 
 
 .frontend .hovertext,
 .backend .hovertext,
@@ -166,6 +164,26 @@ input[type=submit]
   padding-top: 3px;
   padding-bottom: 3px;
 } 
+
+.btn-style
+{
+	-webkit-box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
+	-moz-box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
+	box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
+	border-bottom-color:#333;
+	border:1px solid #61c4ea;
+	background-color:white;
+	/*background-color:#7cceee;*/
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	color:#333;
+	font-family:inherit;
+	font-size:14px;
+	text-shadow:#b2e2f5 0 1px 0;
+	padding:5px
+}    
+
 .slideshow {
   width: 900px;
   height: 250px;

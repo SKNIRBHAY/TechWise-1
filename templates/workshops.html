@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <style>span.stars, span.stars>* {
+    display: inline-block;
+    background: url(http://i.imgur.com/YsyS5y8.png) 0 -16px repeat-x;
+    width: 80px;
+    height: 16px;
+}
+span.stars>*{
+    max-width:80px;
+    background-position: 0 0;
+    }
+    </style>
+</head>
+<body>
+
+{% block content %}
+
+    <h1>Here are the upcoming seminars and workshops::</h1>
+    <br/>
+    <br/>
+     <div style="text-align: justify">
+      <div style="text-align: justify">
+    <h4>Hack 4 Queer Youth - all welcome
+    <a href="/hStatic"> Read More</a></h4>
+    <p>Rating: 3</p>
+    </div>
+    <h4>IoT Smart City Hackathon
+    <a href="/hStatic1"> Read More</a></h4>
+    <p>Rating: 5</p>
+    </div>
+
+
+<div id="result" style="text-align: justify;" >
+    <script>
+    $.fn.stars = function() {
+    return this.each(function(i,e){$(e).html($('<span/>').width($(e).text()*16));});
+    };
+    $('.stars').stars();</script>
+<script>
+    var getJSON = function(url) {
+  return new Promise(function(resolve, reject) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('get', url, true);
+    xhr.responseType = 'json';
+    xhr.onload = function() {
+      var status = xhr.status;
+      if (status == 200) {
+        resolve(xhr.response);
+      } else {
+        reject(status);
+      }
+    };
+    xhr.send();
+  });
+
+};
+
+ var jsonData=getJSON('https://access.alchemyapi.com/calls/data/GetNews?apikey=0ebb251ba3d307b31189573930900c6d9f350fb5&return=enriched.url.title,enriched.url.url,enriched.url.enrichedTitle.docSentiment&q.enriched.url.cleanedTitle=workshop&q.enriched.url.enrichedTitle.taxonomy.taxonomy_.label=technology%20and%20computing&count=25&outputMode=json&start=now-30d&end=now').then(function(data)
+ {
+     var sjd="";
+    for(var i=0; i<data.result.docs.length; i++)
+     {
+
+          var url = data.result.docs[i].source.enriched.url.url
+
+        sjd +='<h4>'+ "<br/>" + data.result.docs[i].source.enriched.url.title +
+                '<a href="/rawHtmlText/?redirect='+url+'">' + ' Read more' + '</a>' + '<br>' + '</h4>';
+
+
+         if(data.result.docs[i].source.enriched.url.enrichedTitle.docSentiment.score > 0){
+             sjd += "Rating: " + '<span class="stars">5</span>';
+         }
+         else if(data.result.docs[i].source.enriched.url.enrichedTitle.docSentiment.score == 0 ){
+             sjd+="Rating: " + '<span class="stars">3</span>';
+         }
+         else {
+             sjd +="Rating: " + '<span class="stars">1</span>';
+         }
+     }
+     document.getElementById("result").innerHTML = sjd ;
+
+ }
+ );
+
+</script>
+</div>
+{% endblock %}
+</body>
+</html>

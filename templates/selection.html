@@ -1,0 +1,121 @@
+{% extends "base_Mounika.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+  <title>Programming frameworks</title>
+  <meta name="description" content="free website template" />
+  <meta name="keywords" content="enter your keywords here" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=9" />
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/image_slide.js' %}"></script>
+</head>
+
+<style>
+    {% block style %}
+
+    {% endblock %}
+</style>
+{% block content %}
+<body>
+  <link href="{% static 'css/homepage.css' %}" rel="stylesheet" type="text/css"/>
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/image_slide.js' %}"></script>
+  <div id="main">
+    <div id="site_content">        
+      <div class="slideshow"> 
+        <ul class="slideshow">
+          <li class="show"><img width="900" height="250" border="10" src="http://eblul.org.uk/wp-content/uploads/2015/04/blog-about.png"/></li>
+          <li><img width="900" height="250" border="10" src="http://holykaw.alltop.com/wp-content/uploads/2015/07/Untitled-design-78.png"/></li>
+        </ul> 
+      </div><!--close slideshow-->
+      <div class="blockgroup"> 
+    <div class="frontend">
+      <h3>Front End Design</h3>
+    <p>Know about different frameworks for front end web developement, also get to know about most powerful amd popular frameworks available today which makes the 680 million webpages possible!! </p>
+                <div class="hovertext">
+                  <input type="checkbox" name="bootstrap" value="bootstrap">
+                    <a href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)" target="_blank">Bootstrap</a><br>
+                  </input>
+                  <input type="checkbox" name="html" value="html">
+                    <a href="https://en.wikipedia.org/wiki/HTML" target="_blank">HTML</a><br>
+                  </input>
+                  <input type="checkbox" name="css" value="css">
+                    <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank">CSS</a><br>
+                  </input>
+                  <input type="checkbox" name="javascript" value="javascript">
+                    <a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a><br>
+                  </input>
+      <br>
+      <form action="http://www.google.com">
+                    <input type="submit" color="black" value="Compare">
+      </form>
+                </div>
+    </div><!--close frontend-->
+    <div class="backend">
+      <h3>Back End Design</h3>
+    <p>Know about different Back End web developement technologies, which makes the front end design possible!! Learn building applications using different server side languages.</ p>   
+                <div class="hovertext">
+                  <input type="checkbox" name="perl" value="perl">
+                    <a href="https://en.wikipedia.org/wiki/Perl" target="_blank">Perl</a><br>
+                  </input>
+                  <input type="checkbox" name="php" value="php">
+                    <a href="https://en.wikipedia.org/wiki/PHP" target="_blank">PHP</a><br>
+                  </input>
+                  <input type="checkbox" name="nodejs" value="nodejs">
+                    <a href="https://en.wikipedia.org/wiki/Node.js" target="_blank">Node JS</a><br>
+                  </input>
+                  <input type="checkbox" name="python" value="python">
+                    <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">Python</a><br>
+                  </input>
+                  <input type="checkbox" name="ruby" value="ruby">
+                    <a href="https://en.wikipedia.org/wiki/Ruby_(programming_language)" target="_blank">Ruby</a><br>
+                  </input>
+      <br>
+      <form action="http://www.google.com">
+                    <input type="submit" color="black" value="Compare">
+      </form>
+                </div>
+    </div><!--close backend-->    
+    <div class="databases">
+      <h3>DataBases</h3>
+    <p>Know about different DataBases as it is central to modern applications and choosing the right Database technology is very much essential in successful deployement of IT projects. </p>    
+                <div class="hovertext">
+                  <input type="checkbox" name="db2" value="db2">
+                    <a href="https://en.wikipedia.org/wiki/IBM_DB2" target="_blank">DB2</a><br>
+                  </input>
+                  <input type="checkbox" name="mysql" value="sql">
+                    <a href="https://en.wikipedia.org/wiki/MySQL" target="_blank">MySQL</a><br>
+                  </input>
+                  <input type="checkbox" name="mongodb" value="mongodb">
+                    <a href="https://en.wikipedia.org/wiki/MongoDB" target="_blank">MongoDB</a><br>
+                  </input>
+                  <input type="checkbox" name="postgresql" value="postgresql">
+                    <a href="https://en.wikipedia.org/wiki/PostgreSQL" target="_blank">PostgreSQL</a><br>
+                  </input>
+                  <input type="checkbox" name="sqlite" value="sqlite">
+                    <a href="https://en.wikipedia.org/wiki/SQLite" target="_blank">SQLite</a><br>
+                  </input>
+      <br>
+      <form action="http://www.google.com">
+                    <input type="submit" color="black" value="Compare">
+      </form>
+                </div>
+    </div><!--close databases-->     
+      </div><!--close blockgroup-->
+      <div id="content">
+        <div class="content_item">
+      <h1>Welcome To Our Website</h1> 
+          <p> This is the Website which gives the user a good analysis of what programming language to choose for their application from the abundant number of choices available today.The website also gives the statistical analysis view on the real time scenario related to any technology with its comparision to other related technologies.You can also know about various Hackathons,workshops and conferences assosiated with a particular technology based on your interest.
+</p>            
+  </div><!--close content_item-->
+      </div><!--close content-->   
+    <br style="clear:both"/>
+    </div><!--close site_content-->
+  </div><!--close main-->
+{% endblock %}
+</body>
+</html>
